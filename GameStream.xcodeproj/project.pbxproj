@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41C97C4D26ACD09200CD5C5B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C97C4C26ACD09200CD5C5B /* Home.swift */; };
+		41C97C4F26ACFD6D00CD5C5B /* GamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C97C4E26ACFD6D00CD5C5B /* GamesView.swift */; };
+		41C97C5426ACFF0B00CD5C5B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C97C5326ACFF0B00CD5C5B /* Model.swift */; };
+		41C97C5626ACFF1900CD5C5B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C97C5526ACFF1900CD5C5B /* ViewModel.swift */; };
 		41ED70B226ABFFB200191956 /* GameStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED70B126ABFFB200191956 /* GameStreamApp.swift */; };
 		41ED70B426ABFFB200191956 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41ED70B326ABFFB200191956 /* ContentView.swift */; };
 		41ED70B626ABFFB300191956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41ED70B526ABFFB300191956 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41C97C4C26ACD09200CD5C5B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		41C97C4E26ACFD6D00CD5C5B /* GamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesView.swift; sourceTree = "<group>"; };
+		41C97C5326ACFF0B00CD5C5B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		41C97C5526ACFF1900CD5C5B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		41ED70AE26ABFFB200191956 /* GameStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41ED70B126ABFFB200191956 /* GameStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStreamApp.swift; sourceTree = "<group>"; };
 		41ED70B326ABFFB200191956 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,6 +41,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41C97C5026ACFE4E00CD5C5B /* Vistas */ = {
+			isa = PBXGroup;
+			children = (
+				41C97C4E26ACFD6D00CD5C5B /* GamesView.swift */,
+				41C97C4C26ACD09200CD5C5B /* Home.swift */,
+				41ED70B326ABFFB200191956 /* ContentView.swift */,
+			);
+			path = Vistas;
+			sourceTree = "<group>";
+		};
+		41C97C5126ACFE8100CD5C5B /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				41C97C5326ACFF0B00CD5C5B /* Model.swift */,
+			);
+			path = Modelos;
+			sourceTree = "<group>";
+		};
+		41C97C5226ACFE9600CD5C5B /* VistasModelos */ = {
+			isa = PBXGroup;
+			children = (
+				41C97C5526ACFF1900CD5C5B /* ViewModel.swift */,
+			);
+			path = VistasModelos;
+			sourceTree = "<group>";
+		};
 		41ED70A526ABFFB200191956 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +86,10 @@
 		41ED70B026ABFFB200191956 /* GameStream */ = {
 			isa = PBXGroup;
 			children = (
+				41C97C5126ACFE8100CD5C5B /* Modelos */,
+				41C97C5026ACFE4E00CD5C5B /* Vistas */,
 				41ED70B126ABFFB200191956 /* GameStreamApp.swift */,
-				41ED70B326ABFFB200191956 /* ContentView.swift */,
+				41C97C5226ACFE9600CD5C5B /* VistasModelos */,
 				41ED70B526ABFFB300191956 /* Assets.xcassets */,
 				41ED70BA26ABFFB300191956 /* Info.plist */,
 				41ED70B726ABFFB300191956 /* Preview Content */,
@@ -138,7 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C97C5426ACFF0B00CD5C5B /* Model.swift in Sources */,
 				41ED70B426ABFFB200191956 /* ContentView.swift in Sources */,
+				41C97C4D26ACD09200CD5C5B /* Home.swift in Sources */,
+				41C97C4F26ACFD6D00CD5C5B /* GamesView.swift in Sources */,
+				41C97C5626ACFF1900CD5C5B /* ViewModel.swift in Sources */,
 				41ED70B226ABFFB200191956 /* GameStreamApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

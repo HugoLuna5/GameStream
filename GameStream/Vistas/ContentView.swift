@@ -9,28 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            
-            Spacer()
-            
-            Color(red: 19/255, green: 30/255, blue: 53/255, opacity: 1.0)
-                .ignoresSafeArea()
+        NavigationView {
             
             
-            VStack {
+            
+            ZStack {
                 
-                Image("appLogo").resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 250)
-                    .padding(.bottom, 42)
+                Spacer()
+                
+                Color(red: 19/255, green: 30/255, blue: 53/255, opacity: 1.0)
+                    .ignoresSafeArea()
                 
                 
-                
-                InicioYRegistroView()
+                VStack {
+                    
+                    Image("appLogo").resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250)
+                        .padding(.bottom, 42)
+                    
+                    
+                    
+                    InicioYRegistroView()
+                    
+                }
                 
             }
-            
         }
+        .navigationBarHidden(true)
     }
 }
 
@@ -79,6 +85,8 @@ struct InicioSesionView: View {
     @State var correo: String = ""
     
     @State var contraseña: String = ""
+    
+    @State var isScreenHomeActive: Bool = false
     
     var body: some View {
         
@@ -189,16 +197,30 @@ struct InicioSesionView: View {
                 
                 
             }.padding(.horizontal, 77.0)
+        
+        
+        NavigationLink(
+            destination: Home(),
+            isActive: $isScreenHomeActive,
+            label: {
+                EmptyView()
+            })
+        
         }
         
         
         
     }
+    
+    func iniciarSesion() {
+        print("Estoy iniciando sesion")
+        isScreenHomeActive = true
+    }
+    
+    
 }
 
-func iniciarSesion() {
-    print("Estoy iniciando sesion")
-}
+
 
 
 struct RegistroView: View {
