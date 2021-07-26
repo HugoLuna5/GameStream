@@ -1,20 +1,25 @@
 //
-//  ViewModel.swift
+//  SearchGame.swift
 //  GameStream
 //
-//  Created by Hugo Luna on 24/07/21.
+//  Created by Hugo Luna on 25/07/21.
 //
 
 import Foundation
 
 
-
-class ViewModel: ObservableObject {
+class SearchGame: ObservableObject {
     
     @Published var gamesInfo = [Game]()
     
-    init() {
-        let url = URL(string: "https://gamestream-api.herokuapp.com/api/games")!
+    
+    func search(gameName: String) {
+        
+        gamesInfo.removeAll()
+        
+        let gameNameSpaces = gameName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        let url = URL(string: "https://gamestream-api.herokuapp.com/api/games/search?contains=\(gameNameSpaces ?? "cuphead")")!
         
         
         var request = URLRequest(url: url)
@@ -31,12 +36,12 @@ class ViewModel: ObservableObject {
                     print("Tamaño: \(jsonData)")
                     
                     let decodeData = try
-                        JSONDecoder().decode([Game].self, from: jsonData)
+                        JSONDecoder().decode(Resultados.self, from: jsonData)
                     
                     
                     DispatchQueue.main.async {
                         
-                        self.gamesInfo.append(contentsOf: decodeData)
+                        self.gamesInfo.append(contentsOf: decodeData.results)
                         
                     }
                     
@@ -51,5 +56,7 @@ class ViewModel: ObservableObject {
         
         
     }
+    
+    
     
 }
